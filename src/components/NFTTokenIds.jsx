@@ -300,11 +300,11 @@ function NFTTokenIds({ inputValue, setInputValue }) {
               >
                 <Badge.Ribbon
                   color="green"
-                  text={`${
-                    getMarketItem(nftToBuy).price / ("1e" + 18)
-                  } ${nativeName}`}
+                  text={`${getMarketItem(nftToBuy).price / ("1e" + 18)
+                    } ${nativeName}`}
                 >
                   <img
+                    alt=""
                     src={nftToBuy?.image}
                     style={{
                       width: "250px",

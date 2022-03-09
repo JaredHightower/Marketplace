@@ -1,19 +1,19 @@
 export const networkCollections = {
-  "0x13881": [
-    //Add Your Collections here
-    {
-      image:
-        "https://lh3.googleusercontent.com/BWCni9INm--eqCK800BbRkL10zGyflxfPwTHt4XphMSWG3XZvPx1JyGdfU9vSor8K046DJg-Q8Y4ioUlWHiCZqgR_L00w4vcbA-w=s0",
-      name: "Test Mages",
-      addrs: "0x275d553f426355c20b134D944B5b28D31CDb83DA",
-    },
-    {
-      image:
-        "https://ipfs.moralis.io:2053/ipfs/QmfLbpeVHxReWKNLaXTPcWiafi49eoAL4gRwMGuXtx2Eqe/images/14.png",
-      name: "Pixel Show",
-      addrs: "0xCA34404dD8Bd6537BE76F3A51B379F8949bD7973",
-    },
-  ],
+  // "0x13881": [
+  //   //Add Your Collections here
+  //   {
+  //     image:
+  //       "https://lh3.googleusercontent.com/BWCni9INm--eqCK800BbRkL10zGyflxfPwTHt4XphMSWG3XZvPx1JyGdfU9vSor8K046DJg-Q8Y4ioUlWHiCZqgR_L00w4vcbA-w=s0",
+  //     name: "Test Mages",
+  //     addrs: "0x275d553f426355c20b134D944B5b28D31CDb83DA",
+  //   },
+  //   {
+  //     image:
+  //       "https://ipfs.moralis.io:2053/ipfs/QmfLbpeVHxReWKNLaXTPcWiafi49eoAL4gRwMGuXtx2Eqe/images/14.png",
+  //     name: "Pixel Show",
+  //     addrs: "0xCA34404dD8Bd6537BE76F3A51B379F8949bD7973",
+  //   },
+  // ],
 
   "0x1": [
     {
@@ -63,6 +63,14 @@ export const networkCollections = {
         "https://lh3.googleusercontent.com/LIov33kogXOK4XZd2ESj29sqm_Hww5JSdO7AFn5wjt8xgnJJ0UpNV9yITqxra3s_LMEW1AnnrgOVB_hDpjJRA1uF4skI5Sdi_9rULi8=s0",
       name: "Cool Cats NFT",
       addrs: "0x1A92f7381B9F03921564a437210bB9396471050C",
+    },
+  ],
+  "0x4": [
+    {
+      image:
+        "https://gateway.pinata.cloud/ipfs/QmcZ4pksFve4n88PsZ4uhFmc3R1MyHx24cBCsyurTKT1Nz/TestMeta.png",
+      name: "Meta Puppets",
+      addrs: "0x8E2B0bEC1Af289186BdB10b588Bda31d405d3709",
     },
   ],
 };

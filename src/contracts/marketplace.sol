@@ -5,17 +5,17 @@ import "github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/uti
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol";
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/security/ReentrancyGuard.sol";
 
-contract marketPlaceBoilerPlate is ReentrancyGuard {
+contract marketPlace is ReentrancyGuard {
     using Counters for Counters.Counter;
     Counters.Counter private _itemIds;
     Counters.Counter private _itemsSold;
-    
+
      address public owner;
-     
+
      constructor() {
          owner = msg.sender;
      }
-     
+
      struct MarketItem {
          uint itemId;
          address nftContract;
@@ -25,10 +25,10 @@ contract marketPlaceBoilerPlate is ReentrancyGuard {
          uint256 price;
          bool sold;
      }
-     
+
      mapping(uint256 => MarketItem) private idToMarketItem;
-     
-     event MarketItemCreated (
+
+     event MarketItem (
         uint indexed itemId,
         address indexed nftContract,
         uint256 indexed tokenId,
@@ -42,20 +42,18 @@ contract marketPlaceBoilerPlate is ReentrancyGuard {
          uint indexed itemId,
          address owner
          );
-     
-    
-    
+
     function createMarketItem(
         address nftContract,
         uint256 tokenId,
         uint256 price
         ) public payable nonReentrant {
             require(price > 0, "Price must be greater than 0");
-            
+
             _itemIds.increment();
             uint256 itemId = _itemIds.current();
-  
-            idToMarketItem[itemId] =  MarketItem(
+
+            idToMarketItem[itemId] = MarketItem(
                 itemId,
                 nftContract,
                 tokenId,
@@ -64,9 +62,9 @@ contract marketPlaceBoilerPlate is ReentrancyGuard {
                 price,
                 false
             );
-            
+
             IERC721(nftContract).transferFrom(msg.sender, address(this), tokenId);
-                
+
             emit MarketItemCreated(
                 itemId,
                 nftContract,

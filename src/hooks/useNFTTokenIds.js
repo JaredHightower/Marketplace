@@ -25,6 +25,7 @@ export const useNFTTokenIds = (addr) => {
   useEffect(async () => {
     if (data?.result) {
       const NFTs = data.result;
+      console.log(NFTs)
       setTotalNFTs(data.total);
       setFetchSuccess(true);
       for (let NFT of NFTs) {
@@ -40,23 +41,23 @@ export const useNFTTokenIds = (addr) => {
               });
           } catch (error) {
             setFetchSuccess(false);
-              
-/*          !!Temporary work around to avoid CORS issues when retrieving NFT images!!
-            Create a proxy server as per https://dev.to/terieyenike/how-to-create-a-proxy-server-on-heroku-5b5c
-            Replace <your url here> with your proxy server_url below
-            Remove comments :)
 
-              try {
-                await fetch(`<your url here>/${NFT.token_uri}`)
-                .then(response => response.json())
-                .then(data => {
-                  NFT.image = resolveLink(data.image);
-                });
-              } catch (error) {
-                setFetchSuccess(false);
-              }
-
- */
+            /*          !!Temporary work around to avoid CORS issues when retrieving NFT images!!
+                        Create a proxy server as per https://dev.to/terieyenike/how-to-create-a-proxy-server-on-heroku-5b5c
+                        Replace <your url here> with your proxy server_url below
+                        Remove comments :)
+            
+                          try {
+                            await fetch(`<your url here>/${NFT.token_uri}`)
+                            .then(response => response.json())
+                            .then(data => {
+                              NFT.image = resolveLink(data.image);
+                            });
+                          } catch (error) {
+                            setFetchSuccess(false);
+                          }
+            
+             */
           }
         }
       }

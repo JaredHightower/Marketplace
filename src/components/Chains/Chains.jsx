@@ -27,62 +27,63 @@ const menuItems = [
     value: "Ethereum",
     icon: <ETHLogo />,
   },
-  // {
-  //   key: "0x539",
-  //   value: "Local Chain",
-  //   icon: <ETHLogo />,
-  // },
-  // {
-  //   key: "0x3",
-  //   value: "Ropsten Testnet",
-  //   icon: <ETHLogo />,
-  // },
-  // {
-  //   key: "0x4",
-  //   value: "Rinkeby Testnet",
-  //   icon: <ETHLogo />,
-  // },
-  // {
-  //   key: "0x2a",
-  //   value: "Kovan Testnet",
-  //   icon: <ETHLogo />,
-  // },
-  // {
-  //   key: "0x5",
-  //   value: "Goerli Testnet",
-  //   icon: <ETHLogo />,
-  // },
-  // {
-  //   key: "0x38",
-  //   value: "Binance",
-  //   icon: <BSCLogo />,
-  // },
-  // {
-  //   key: "0x61",
-  //   value: "Smart Chain Testnet",
-  //   icon: <BSCLogo />,
-  // },
-  // {
-  //   key: "0x89",
-  //   value: "Polygon",
-  //   icon: <PolygonLogo />,
-  // },
+  {
+    key: "0x539",
+    value: "Local Chain",
+    icon: <ETHLogo />,
+  },
+  {
+    key: "0x3",
+    value: "Ropsten Testnet",
+    icon: <ETHLogo />,
+  },
+  {
+    key: "0x4",
+    value: "Rinkeby Testnet",
+    icon: <ETHLogo />,
+  },
+  {
+    key: "0x2a",
+    value: "Kovan Testnet",
+    icon: <ETHLogo />,
+  },
+  {
+    key: "0x5",
+    value: "Goerli Testnet",
+    icon: <ETHLogo />,
+  },
+  {
+    key: "0x38",
+    value: "Binance",
+    icon: <BSCLogo />,
+  },
+  {
+    key: "0x61",
+    value: "Smart Chain Testnet",
+    icon: <BSCLogo />,
+  },
+  {
+    key: "0x89",
+    value: "Polygon",
+    icon: <PolygonLogo />,
+  },
   {
     key: "0x13881",
     value: "Mumbai",
     icon: <PolygonLogo />,
   },
-  // {
-  //   key: "0xa86a",
-  //   value: "Avalanche",
-  //   icon: <AvaxLogo />,
-  // },
+  {
+    key: "0xa86a",
+    value: "Avalanche",
+    icon: <AvaxLogo />,
+  },
 ];
 
 function Chains() {
   const { switchNetwork } = useChain();
   const { chainId } = useMoralisDapp();
   const [selected, setSelected] = useState({});
+  const [hover, setHover] = useState(false);
 
   useEffect(() => {
     if (!chainId) return null;
@@ -96,6 +97,7 @@ function Chains() {
     switchNetwork(e.key);
   };
 
+
   const menu = (
     <Menu onClick={handleMenuClick}>
       {menuItems.map((item) => (
@@ -103,18 +105,22 @@ function Chains() {
           <span style={{ marginLeft: "5px" }}>{item.value}</span>
         </Menu.Item>
       ))}
-    </Menu> 
+    </Menu>
   );
 
   return (
     <div>
-      <Dropdown overlay={menu} trigger={["click"]}>
+      <Dropdown
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        overlay={menu}
+        trigger={["click"]}>
         <Button
           key={selected?.key}
           icon={selected?.icon}
           style={{ ...styles.button, ...styles.item }}
         >
-          <span style={{ marginLeft: "5px" }}>{selected?.value}</span>
+          <span style={{ marginLeft: "5px" }}>{hover ? selected?.value : ""}</span>
           <DownOutlined />
         </Button>
       </Dropdown>

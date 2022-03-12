@@ -205,6 +205,8 @@ function NFTBalance() {
                 key={index}
               >
                 <Meta title={nft.name} description={nft.contract_type} />
+                <Meta description={`TOTAL: ${nft.amount}x`} />
+
               </Card>
               : null))}
       </div>

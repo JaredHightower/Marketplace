@@ -64,13 +64,19 @@ export const networkCollections = {
       name: "Cool Cats NFT",
       addrs: "0x1A92f7381B9F03921564a437210bB9396471050C",
     },
+    {
+      image:
+        "https://ipfs.moralis.io:2053/ipfs/QmcZ4pksFve4n88PsZ4uhFmc3R1MyHx24cBCsyurTKT1Nz/TestMeta.png",
+      name: "Meta Puppets",
+      addrs: "0xD4cacCe77259336700142b4E757885ffe8C16CC2",
+    },
   ],
   "0x4": [
     {
       image:
-        "https://gateway.pinata.cloud/ipfs/QmcZ4pksFve4n88PsZ4uhFmc3R1MyHx24cBCsyurTKT1Nz/TestMeta.png",
+        "https://ipfs.moralis.io:2053/ipfs/QmcZ4pksFve4n88PsZ4uhFmc3R1MyHx24cBCsyurTKT1Nz/TestMeta.png",
       name: "Meta Puppets",
-      addrs: "0x8E2B0bEC1Af289186BdB10b588Bda31d405d3709",
+      addrs: "0xD4cacCe77259336700142b4E757885ffe8C16CC2",
     },
   ],
 };
